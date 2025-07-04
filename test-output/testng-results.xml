@@ -2,20 +2,20 @@
 <testng-results ignored="26" total="27" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-04T15:22:14 IST" name="Default suite" finished-at="2025-07-04T15:22:24 IST" duration-ms="10177">
+  <suite started-at="2025-07-04T16:42:52 IST" name="Default suite" finished-at="2025-07-04T16:43:40 IST" duration-ms="48396">
     <groups>
     </groups>
-    <test started-at="2025-07-04T15:22:14 IST" name="Default test" finished-at="2025-07-04T15:22:24 IST" duration-ms="10177">
+    <test started-at="2025-07-04T16:42:52 IST" name="Default test" finished-at="2025-07-04T16:43:40 IST" duration-ms="48396">
       <class name="Chull.TestCase">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T15:22:14 IST" name="setup" finished-at="2025-07-04T15:22:20 IST" duration-ms="5434" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T16:42:52 IST" name="setup" finished-at="2025-07-04T16:43:24 IST" duration-ms="32689" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginWithMailTest()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T15:22:20 IST" name="loginWithMailTest" finished-at="2025-07-04T15:22:24 IST" duration-ms="3972" status="PASS">
+        <test-method signature="playstore()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T16:43:24 IST" name="playstore" finished-at="2025-07-04T16:43:39 IST" duration-ms="15186" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWithMailTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T15:22:24 IST" name="teardown" finished-at="2025-07-04T15:22:24 IST" duration-ms="686" status="PASS">
+        </test-method> <!-- playstore -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.TestCase@38cee291]" started-at="2025-07-04T16:43:39 IST" name="teardown" finished-at="2025-07-04T16:43:40 IST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

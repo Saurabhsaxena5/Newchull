@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="methods" thread-count="2">
+<suite name="Suite" parallel="classes" thread-count="2">
 
 	<test name="Login with Email">
 		<classes>
@@ -223,6 +223,23 @@
 			<class name="Chull.TestCase">
 				<methods>
 					<include name="playstore" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="verify that the coupon code  with the price ">
+		<classes>
+			<class name="Chull.TestCase">
+				<methods>
+					<include name="checkcouponprice" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="verify that the coupon with the percentage ">
+		<classes>
+			<class name="Chull.TestCase">
+				<methods>
+					<include name="checkcouponprice" />
 				</methods>
 			</class>
 		</classes>
