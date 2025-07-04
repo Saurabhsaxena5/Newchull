@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="methods" thread-count="2">
 
 	<test name="Login with Email">
 		<classes>
@@ -205,6 +205,24 @@
 			<class name="Chull.TestCase">
 				<methods>
 					<include name="countTotalVideosWithNames" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="verify the Applestrore button is redirect or not">
+		<classes>
+			<class name="Chull.TestCase">
+				<methods>
+					<include name="ApplestoreButtonTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="verify the playstore button is redirect or not">
+		<classes>
+			<class name="Chull.TestCase">
+				<methods>
+					<include name="playstore" />
 				</methods>
 			</class>
 		</classes>
