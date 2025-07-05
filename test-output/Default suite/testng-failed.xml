@@ -3,10 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Chull.TestCase">
+      <class name="Chull.Testcase2">
         <methods>
           <include name="filterButtonClickTest"/>
           <include name="playVideoTest"/>
+          <include name="couponPercentage"/>
           <include name="loginWithPhoneNumber"/>
           <include name="detailedPageWithoutLoginTest"/>
           <include name="searchVideoTest"/>
@@ -18,16 +19,18 @@
           <include name="verifyurl"/>
           <include name="buyRentVideoTest"/>
           <include name="watchlist"/>
-          <include name="checkRelatedvideo"/>
+          <include name="playstore"/>
+          <include name="checkcouponprice"/>
           <include name="viewAllTest"/>
           <include name="wrongOtpLoginTest"/>
-          <include name="checkTagname"/>
           <include name="verifyCurrentUrlTest"/>
           <include name="loginWithMailTest"/>
+          <include name="subscription"/>
+          <include name="verifyPopupIsVisibleuserBuysubscription"/>
           <include name="filterValuesTest"/>
-          <include name="playStoreButtonTest"/>
+          <include name="withoutLoginSubscriptionButtonisVisible"/>
         </methods>
-      </class> <!-- Chull.TestCase -->
+      </class> <!-- Chull.Testcase2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

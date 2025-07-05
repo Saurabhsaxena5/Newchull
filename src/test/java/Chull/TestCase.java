@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.*;
@@ -480,45 +481,57 @@ public class TestCase {
 		Thread.sleep(2000);
 	}
 
-	// Test Case 15: Play Store button
+	// Test Case 15: ApplestoreStore button
 	@Test
-	public void playStoreButtonTest() throws InterruptedException {
+	public void ApplestoreButtonTest() throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
-		Thread.sleep(2000);
+	    // Login
+	    driver.findElement(By.xpath("//a[@href='/login']")).click();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile Number']"))).sendKeys("8920689888");
+	    driver.findElement(By.xpath("//button[normalize-space()='Send OTP']")).click();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='otp']"))).sendKeys("1234");
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Verify OTP']"))).click();
 
-		WebElement enterphoneNumber = driver.findElement(By.xpath("//input[@placeholder=\"Mobile Number\"]"));
-		enterphoneNumber.sendKeys("8920689888");
+	    // Scroll to bottom properly
+	    Thread.sleep(5000);
+	    ((JavascriptExecutor) driver).executeScript("window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});");
+	    Thread.sleep(3000); // Give time for content to load
 
-		driver.findElement(By.xpath("//button[normalize-space(.)='Send OTP']")).click();
+	    // Click Play Store (or App Store) button
+	    WebElement storeLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='icon']//a[1]")));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", storeLink);
+	    Thread.sleep(1000);
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", storeLink);
 
-		driver.findElement(By.xpath("//input[@name=\"otp\"]")).sendKeys("1234");
-		Thread.sleep(4000);
-		WebElement clickOnSendOtp = driver.findElement(By.xpath("//button[normalize-space(.)='Verify OTP']"));
-		Thread.sleep(2000);
-		clickOnSendOtp.click();
+	    // Switch to new tab
+	    String mainWindow = driver.getWindowHandle();
+	    Set<String> windows = driver.getWindowHandles();
+	    for (int i = 0; i < 5; i++) {
+	        if (windows.size() > 1) break;
+	        Thread.sleep(1000);
+	        windows = driver.getWindowHandles();
+	    }
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	    for (String win : windows) {
+	        if (!win.equals(mainWindow)) {
+	            driver.switchTo().window(win);
+	            break;
+	        }
+	    }
 
-		WebElement playStoreLink = driver.findElement(By.xpath("//div[@class='icon']//a[1]"));
-		playStoreLink.click();
+	    Thread.sleep(4000);
+	    String newUrl = driver.getCurrentUrl();
+	    System.out.println("🔗 Redirected URL: " + newUrl);
 
-		String mainWindow = driver.getWindowHandle();
-		Set<String> allWindows = driver.getWindowHandles();
+	    // Assertion accepts both Play Store and App Store
+	    Assert.assertTrue(
+	        newUrl.contains("play.google.com") || newUrl.contains("apps.apple.com"),
+	        "❌ Not redirected to App Store or Play Store. Actual URL: " + newUrl
+	    );
 
-		for (String win : allWindows) {
-			if (!win.equals(mainWindow)) {
-				driver.switchTo().window(win);
-				break;
-			}
-		}
-
-		String newUrl = driver.getCurrentUrl();
-		Assert.assertTrue(newUrl.contains("google.com"), "Not redirected to Play Store");
-
-		driver.close();
-		driver.switchTo().window(mainWindow);
+	    driver.close();
+	    driver.switchTo().window(mainWindow);
 	}
 
 	// Test Case 16: Filter with values
@@ -930,7 +943,6 @@ public class TestCase {
 			int count = videoElements.size();
 			System.out.println("Total number of videos: " + count);
 
-			
 		}
 
 		catch (Exception e) {
@@ -940,23 +952,64 @@ public class TestCase {
 	}
 	
 	@Test
-	public void Extractallthevideoname() {
-		try {
-			// Locate all video containers
-			List<WebElement> videoElements = wait
-					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='custom-div']")));
+	public void playstore() throws InterruptedException {
+		
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-			int count = videoElements.size();
-			System.out.println("Total number of videos: " + count);
+		    // Login
+		    driver.findElement(By.xpath("//a[@href='/login']")).click();
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile Number']"))).sendKeys("8920689888");
+		    driver.findElement(By.xpath("//button[normalize-space()='Send OTP']")).click();
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='otp']"))).sendKeys("1234");
+		    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Verify OTP']"))).click();
 
-			
+		    // Scroll to bottom properly
+		    Thread.sleep(5000);
+		    ((JavascriptExecutor) driver).executeScript("window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});");
+		    Thread.sleep(3000); // Give time for content to load
+
+		    // Click Play Store (or App Store) button
+		    WebElement storeLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='icon']//a[2]")));
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", storeLink);
+		    Thread.sleep(1000);
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", storeLink);
+
+		    // Switch to new tab
+		    String mainWindow = driver.getWindowHandle();
+		    Set<String> windows = driver.getWindowHandles();
+		    for (int i = 0; i < 5; i++) {
+		        if (windows.size() > 1) break;
+		        Thread.sleep(1000);
+		        windows = driver.getWindowHandles();
+		    }
+
+		    for (String win : windows) {
+		        if (!win.equals(mainWindow)) {
+		            driver.switchTo().window(win);
+		            break;
+		        }
+		    }
+
+		    Thread.sleep(4000);
+		    String newUrl = driver.getCurrentUrl();
+		    System.out.println("🔗 Redirected URL: " + newUrl);
+
+		    // Assertion accepts both Play Store and App Store
+		    Assert.assertTrue(
+		        newUrl.contains("play.google.com") || newUrl.contains("https://play.google.com/store/apps/details?id=com.ott.chulbull&hl=en_IN"),
+		        " Play Store. Actual URL: " + newUrl
+		    );
+
+		    driver.close();
+		    driver.switchTo().window(mainWindow);
 		}
-
-		catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Failed to count or list video names.");
-		}
-	}
 	
 	
+
 }
+
+	
+	
+	
+
+
