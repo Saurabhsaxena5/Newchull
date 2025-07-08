@@ -229,7 +229,7 @@
 	</test>
 	<test name="verify that the coupon code  with the price ">
 		<classes>
-			<class name="Chull.TestCase">
+			<class name="Chull.Testcase2">
 				<methods>
 					<include name="checkcouponprice" />
 				</methods>
@@ -237,18 +237,27 @@
 		</classes>
 	</test><test name="verify that the coupon with the percentage ">
 		<classes>
-			<class name="Chull.TestCase">
+			<class name="Chull.Testcase2">
 				<methods>
 					<include name="couponPercentage" />
 				</methods>
 			</class>
 		</classes>
 	</test>
-	</test><test name="Verify that coupon code enter">
+	<test name="Verify that coupon code enter">
 		<classes>
-			<class name="Chull.TestCase">
+			<class name="Chull.Testcase2">
 				<methods>
 					<include name="checkrazorpayopen" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="verify that if user enter the Invalid data in the searchfield">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="Validate_No_Data_message_is_visible" />
 				</methods>
 			</class>
 		</classes>
