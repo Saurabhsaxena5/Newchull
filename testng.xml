@@ -239,7 +239,16 @@
 		<classes>
 			<class name="Chull.TestCase">
 				<methods>
-					<include name="checkcouponprice" />
+					<include name="couponPercentage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	</test><test name="Verify that coupon code enter">
+		<classes>
+			<class name="Chull.TestCase">
+				<methods>
+					<include name="checkrazorpayopen" />
 				</methods>
 			</class>
 		</classes>
