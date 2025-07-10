@@ -205,5 +205,18 @@ public class Testcase2 extends TestCase {
 		String message = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h2[normalize-space()='No data available']"))).getText();
 		System.out.println(message);
 	}
+	
+	@Test
+	public void clickwatchnow_userredirect_into_login() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		WebElement clickonvideo = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class=\"img-top\"])[1]")));
+		clickonvideo.click();
+		
+		driver.findElement(By.xpath("//button[@class=\"sc-fUnMCh hzdSCt\"]")).click();
+		boolean check=driver.findElement(By.xpath("//div[@class=\"signin-form\"]")).isDisplayed();
+		System.out.println(check);
+	}
+	
 
 }

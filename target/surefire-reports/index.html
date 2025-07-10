@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">27 methods,   27 passed</span>
+                    <span class="method-stats">27 methods, 2 failed,   25 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="filterValuesTest">filterValuesTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="logoutTest">logoutTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -158,11 +177,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="filterValuesTest">filterValuesTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="footerTermsAndConditionsTest">footerTermsAndConditionsTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -174,11 +188,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="loginWithPhoneNumber">loginWithPhoneNumber</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Chull.TestCase" class="method navigator-link" hash-for-method="logoutTest">logoutTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -248,42 +257,60 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Chull.Testcase2</span>
+              <img src="failed.png"/>
+              <span class="class-name">Chull.TestCase</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Validate_No_Data_message_is_visible">
-                  </a> <!-- Validate_No_Data_message_is_visible -->
-                  <span class="method-name">Validate_No_Data_message_is_visible</span>
+                  <a name="filterValuesTest">
+                  </a> <!-- filterValuesTest -->
+                  <span class="method-name">filterValuesTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@class=&quot;card&quot;])[4] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60195/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 65f4e1e69f90e82b3ddec5e3d9d367bd
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Chull.TestCase.filterValuesTest(TestCase.java:562)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 13 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="checkcouponprice">
-                  </a> <!-- checkcouponprice -->
-                  <span class="method-name">checkcouponprice</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkrazorpayopen">
-                  </a> <!-- checkrazorpayopen -->
-                  <span class="method-name">checkrazorpayopen</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="couponPercentage">
-                  </a> <!-- couponPercentage -->
-                  <span class="method-name">couponPercentage</span>
+                  <a name="logoutTest">
+                  </a> <!-- logoutTest -->
+                  <span class="method-name">logoutTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[@class=&apos;removebtn&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60070}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60070/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5aa5098e5e4f4cdb0ad04877a555fa4d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Chull.TestCase.logoutTest(TestCase.java:417)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 13 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -341,13 +368,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="filterValuesTest">
-                  </a> <!-- filterValuesTest -->
-                  <span class="method-name">filterValuesTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="footerTermsAndConditionsTest">
                   </a> <!-- footerTermsAndConditionsTest -->
                   <span class="method-name">footerTermsAndConditionsTest</span>
@@ -365,13 +385,6 @@
                   <a name="loginWithPhoneNumber">
                   </a> <!-- loginWithPhoneNumber -->
                   <span class="method-name">loginWithPhoneNumber</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="logoutTest">
-                  </a> <!-- logoutTest -->
-                  <span class="method-name">logoutTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -449,6 +462,42 @@
                   <a name="wrongOtpLoginTest">
                   </a> <!-- wrongOtpLoginTest -->
                   <span class="method-name">wrongOtpLoginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Chull.Testcase2</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Validate_No_Data_message_is_visible">
+                  </a> <!-- Validate_No_Data_message_is_visible -->
+                  <span class="method-name">Validate_No_Data_message_is_visible</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkcouponprice">
+                  </a> <!-- checkcouponprice -->
+                  <span class="method-name">checkcouponprice</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkrazorpayopen">
+                  </a> <!-- checkrazorpayopen -->
+                  <span class="method-name">checkrazorpayopen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="couponPercentage">
+                  </a> <!-- couponPercentage -->
+                  <span class="method-name">couponPercentage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -823,118 +872,118 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(27);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkrazorpayopen')
-data.setCell(0, 2, 'Chull.Testcase2')
-data.setCell(0, 3, 38741);
+data.setCell(0, 1, 'checkRelatedvideo')
+data.setCell(0, 2, 'Chull.TestCase')
+data.setCell(0, 3, 50697);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'checkRelatedvideo')
+data.setCell(1, 1, 'searchVideoTest')
 data.setCell(1, 2, 'Chull.TestCase')
-data.setCell(1, 3, 33834);
+data.setCell(1, 3, 27943);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'filterValuesTest')
+data.setCell(2, 1, 'verifyPopupIsVisibleuserBuysubscription')
 data.setCell(2, 2, 'Chull.TestCase')
-data.setCell(2, 3, 20046);
+data.setCell(2, 3, 24126);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Validate_No_Data_message_is_visible')
-data.setCell(3, 2, 'Chull.Testcase2')
-data.setCell(3, 3, 19136);
+data.setCell(3, 1, 'checkUserBuySubscription')
+data.setCell(3, 2, 'Chull.TestCase')
+data.setCell(3, 3, 23691);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'searchVideoTest')
+data.setCell(4, 1, 'filterValuesTest')
 data.setCell(4, 2, 'Chull.TestCase')
-data.setCell(4, 3, 19099);
+data.setCell(4, 3, 23366);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'Banner_is_visible')
+data.setCell(5, 1, 'check_SubscriptionisVisible')
 data.setCell(5, 2, 'Chull.TestCase')
-data.setCell(5, 3, 18742);
+data.setCell(5, 3, 23152);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyPopupIsVisibleuserBuysubscription')
+data.setCell(6, 1, 'logoutTest')
 data.setCell(6, 2, 'Chull.TestCase')
-data.setCell(6, 3, 18197);
+data.setCell(6, 3, 22164);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'couponPercentage')
+data.setCell(7, 1, 'checkrazorpayopen')
 data.setCell(7, 2, 'Chull.Testcase2')
-data.setCell(7, 3, 17684);
+data.setCell(7, 3, 22159);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'checkcouponprice')
+data.setCell(8, 1, 'Validate_No_Data_message_is_visible')
 data.setCell(8, 2, 'Chull.Testcase2')
-data.setCell(8, 3, 17671);
+data.setCell(8, 3, 19863);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'playstore')
-data.setCell(9, 2, 'Chull.TestCase')
-data.setCell(9, 3, 15396);
+data.setCell(9, 1, 'couponPercentage')
+data.setCell(9, 2, 'Chull.Testcase2')
+data.setCell(9, 3, 19119);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'ApplestoreButtonTest')
+data.setCell(10, 1, 'Banner_is_visible')
 data.setCell(10, 2, 'Chull.TestCase')
-data.setCell(10, 3, 15029);
+data.setCell(10, 3, 18860);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'viewAllTest')
-data.setCell(11, 2, 'Chull.TestCase')
-data.setCell(11, 3, 14805);
+data.setCell(11, 1, 'checkcouponprice')
+data.setCell(11, 2, 'Chull.Testcase2')
+data.setCell(11, 3, 18790);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'updateProfileTest')
+data.setCell(12, 1, 'playVideoTest')
 data.setCell(12, 2, 'Chull.TestCase')
-data.setCell(12, 3, 13406);
+data.setCell(12, 3, 18000);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'check_SubscriptionisVisible')
+data.setCell(13, 1, 'wrongOtpLoginTest')
 data.setCell(13, 2, 'Chull.TestCase')
-data.setCell(13, 3, 13105);
+data.setCell(13, 3, 17520);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'checkUserBuySubscription')
+data.setCell(14, 1, 'ApplestoreButtonTest')
 data.setCell(14, 2, 'Chull.TestCase')
-data.setCell(14, 3, 13067);
+data.setCell(14, 3, 15753);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'playVideoTest')
+data.setCell(15, 1, 'viewAllTest')
 data.setCell(15, 2, 'Chull.TestCase')
-data.setCell(15, 3, 12461);
+data.setCell(15, 3, 15681);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'subscription')
+data.setCell(16, 1, 'playstore')
 data.setCell(16, 2, 'Chull.TestCase')
-data.setCell(16, 3, 10164);
+data.setCell(16, 3, 15109);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'logoutTest')
+data.setCell(17, 1, 'updateProfileTest')
 data.setCell(17, 2, 'Chull.TestCase')
-data.setCell(17, 3, 9863);
+data.setCell(17, 3, 13869);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'loginWithPhoneNumber')
+data.setCell(18, 1, 'subscription')
 data.setCell(18, 2, 'Chull.TestCase')
-data.setCell(18, 3, 8669);
+data.setCell(18, 3, 10890);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'wrongOtpLoginTest')
+data.setCell(19, 1, 'loginWithPhoneNumber')
 data.setCell(19, 2, 'Chull.TestCase')
-data.setCell(19, 3, 6704);
+data.setCell(19, 3, 9185);
 data.setCell(20, 0, 20)
 data.setCell(20, 1, 'footerTermsAndConditionsTest')
 data.setCell(20, 2, 'Chull.TestCase')
-data.setCell(20, 3, 5960);
+data.setCell(20, 3, 7299);
 data.setCell(21, 0, 21)
 data.setCell(21, 1, 'loginWithMailTest')
 data.setCell(21, 2, 'Chull.TestCase')
-data.setCell(21, 3, 2986);
+data.setCell(21, 3, 3767);
 data.setCell(22, 0, 22)
 data.setCell(22, 1, 'countTotalVideosWithNames')
 data.setCell(22, 2, 'Chull.TestCase')
-data.setCell(22, 3, 1052);
+data.setCell(22, 3, 3346);
 data.setCell(23, 0, 23)
 data.setCell(23, 1, 'withoutLoginSubscriptionButtonisVisible')
 data.setCell(23, 2, 'Chull.TestCase')
-data.setCell(23, 3, 46);
+data.setCell(23, 3, 550);
 data.setCell(24, 0, 24)
 data.setCell(24, 1, 'verifyCurrentUrlTest')
 data.setCell(24, 2, 'Chull.TestCase')
-data.setCell(24, 3, 25);
+data.setCell(24, 3, 32);
 data.setCell(25, 0, 25)
 data.setCell(25, 1, 'verifyurl')
 data.setCell(25, 2, 'Chull.TestCase')
-data.setCell(25, 3, 19);
+data.setCell(25, 3, 23);
 data.setCell(26, 0, 26)
 data.setCell(26, 1, 'checkTagname')
 data.setCell(26, 2, 'Chull.TestCase')
-data.setCell(26, 3, 19);
+data.setCell(26, 3, 11);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -953,53 +1002,555 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">Chull.Testcase2</span>
+              <span class="ignored-class-name">Chull.TestCase</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <span class="ignored-method-name">watchlist</span>
                 <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
                 <br/>
                 <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
-                <span class="ignored-method-name">logoutTest</span>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
                 <span class="ignored-method-name">checkTagname</span>
                 <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
                 <span class="ignored-method-name">checkTagname</span>
                 <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">logoutTest</span>
+                <span class="ignored-method-name">playVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <span class="ignored-method-name">watchlist</span>
                 <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <span class="ignored-method-name">subscription</span>
                 <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <span class="ignored-method-name">filterValuesTest</span>
                 <br/>
-                <span class="ignored-method-name">logoutTest</span>
+                <span class="ignored-method-name">searchVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
                 <br/>
                 <span class="ignored-method-name">checkRelatedvideo</span>
                 <br/>
                 <span class="ignored-method-name">playVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
+                <span class="ignored-method-name">loginWithMailTest</span>
                 <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
                 <span class="ignored-method-name">checkTagname</span>
                 <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
                 <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
                 <br/>
                 <span class="ignored-method-name">footerTermsAndConditionsTest</span>
                 <br/>
                 <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">filterValuesTest</span>
                 <br/>
@@ -1007,1300 +1558,690 @@ return data;
                 <br/>
                 <span class="ignored-method-name">loginWithMailTest</span>
                 <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
-                <br/>
                 <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
-                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">checkcouponprice</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">couponPercentage</span>
-                <br/>
                 <span class="ignored-method-name">viewAllTest</span>
                 <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
                 <br/>
-                <span class="ignored-method-name">verifyurl</span>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
+                <span class="ignored-method-name">subscription</span>
                 <br/>
                 <span class="ignored-method-name">checkRelatedvideo</span>
                 <br/>
-                <span class="ignored-method-name">viewAllTest</span>
+                <span class="ignored-method-name">checkTagname</span>
                 <br/>
-                <span class="ignored-method-name">checkcouponprice</span>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
                 <br/>
-                <span class="ignored-method-name">watchlist</span>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
                 <br/>
                 <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
                 <br/>
                 <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">filterValuesTest</span>
                 <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
                 <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
                 <br/>
                 <span class="ignored-method-name">viewAllTest</span>
                 <br/>
                 <span class="ignored-method-name">logoutTest</span>
                 <br/>
-                <span class="ignored-method-name">playstore</span>
+                <span class="ignored-method-name">verifyurl</span>
                 <br/>
-                <span class="ignored-method-name">couponPercentage</span>
+                <span class="ignored-method-name">Banner_is_visible</span>
                 <br/>
-                <span class="ignored-method-name">playstore</span>
+                <span class="ignored-method-name">playVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">playstore</span>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
                 <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
                 <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
                 <br/>
                 <span class="ignored-method-name">subscription</span>
                 <br/>
                 <span class="ignored-method-name">loginWithPhoneNumber</span>
                 <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkrazorpayopen</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkrazorpayopen</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">checkrazorpayopen</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">couponPercentage</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
                 <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
                 <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkcouponprice</span>
+                <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
                 <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
                 <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
                 <br/>
                 <span class="ignored-method-name">checkRelatedvideo</span>
                 <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
                 <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
                 <br/>
                 <span class="ignored-method-name">filterButtonClickTest</span>
                 <br/>
-                <span class="ignored-method-name">verifyurl</span>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
-                <span class="ignored-method-name">verifyurl</span>
+                <span class="ignored-method-name">playVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">verifyurl</span>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
                 <br/>
                 <span class="ignored-method-name">loginWithMailTest</span>
                 <br/>
                 <span class="ignored-method-name">ApplestoreButtonTest</span>
                 <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
                 <span class="ignored-method-name">updateProfileTest</span>
                 <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
                 <span class="ignored-method-name">loginWithPhoneNumber</span>
                 <br/>
-                <span class="ignored-method-name">subscription</span>
+                <span class="ignored-method-name">playVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">subscription</span>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
                 <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <span class="ignored-method-name">playstore</span>
                 <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
+                <span class="ignored-method-name">watchlist</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">Chull.TestCase</span>
+              <span class="ignored-class-name">Chull.Testcase2</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
+                <span class="ignored-method-name">watchlist</span>
                 <br/>
                 <span class="ignored-method-name">check_SubscriptionisVisible</span>
                 <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
                 <br/>
                 <span class="ignored-method-name">buyRentVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <span class="ignored-method-name">subscription</span>
                 <br/>
                 <span class="ignored-method-name">ApplestoreButtonTest</span>
                 <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
                 <span class="ignored-method-name">footerTermsAndConditionsTest</span>
                 <br/>
                 <span class="ignored-method-name">loginWithPhoneNumber</span>
                 <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
                 <span class="ignored-method-name">checkUserBuySubscription</span>
                 <br/>
                 <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
                 <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
                 <span class="ignored-method-name">filterButtonClickTest</span>
                 <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
                 <span class="ignored-method-name">logoutTest</span>
                 <br/>
-                <span class="ignored-method-name">playVideoTest</span>
+                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
                 <br/>
-                <span class="ignored-method-name">viewAllTest</span>
+                <span class="ignored-method-name">checkrazorpayopen</span>
                 <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
                 <br/>
                 <span class="ignored-method-name">loginWithPhoneNumber</span>
                 <br/>
                 <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">playVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">Banner_is_visible</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">checkUserBuySubscription</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">viewAllTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">checkTagname</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
-                <br/>
-                <span class="ignored-method-name">logoutTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyCurrentUrlTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
-                <br/>
-                <span class="ignored-method-name">watchlist</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
                 <br/>
                 <span class="ignored-method-name">watchlist</span>
                 <br/>
@@ -2308,93 +2249,201 @@ return data;
                 <br/>
                 <span class="ignored-method-name">Banner_is_visible</span>
                 <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
+                <span class="ignored-method-name">checkcouponprice</span>
                 <br/>
-                <span class="ignored-method-name">playVideoTest</span>
+                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
                 <br/>
-                <span class="ignored-method-name">checkTagname</span>
+                <span class="ignored-method-name">loginWithMailTest</span>
                 <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <span class="ignored-method-name">updateProfileTest</span>
                 <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
+                <span class="ignored-method-name">checkcouponprice</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
                 <span class="ignored-method-name">playstore</span>
                 <br/>
                 <span class="ignored-method-name">filterValuesTest</span>
                 <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
                 <br/>
                 <span class="ignored-method-name">playVideoTest</span>
                 <br/>
+                <span class="ignored-method-name">checkcouponprice</span>
+                <br/>
                 <span class="ignored-method-name">checkRelatedvideo</span>
                 <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
                 <br/>
                 <span class="ignored-method-name">Banner_is_visible</span>
                 <br/>
                 <span class="ignored-method-name">searchVideoTest</span>
                 <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">subscription</span>
-                <br/>
-                <span class="ignored-method-name">loginWithMailTest</span>
-                <br/>
-                <span class="ignored-method-name">wrongOtpLoginTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">filterValuesTest</span>
-                <br/>
-                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <br/>
-                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <span class="ignored-method-name">verifyurl</span>
                 <br/>
                 <span class="ignored-method-name">buyRentVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">searchVideoTest</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">loginWithPhoneNumber</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">ApplestoreButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">playstore</span>
-                <br/>
-                <span class="ignored-method-name">checkRelatedvideo</span>
-                <br/>
-                <span class="ignored-method-name">filterButtonClickTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyurl</span>
                 <br/>
                 <span class="ignored-method-name">viewAllTest</span>
                 <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
+                <span class="ignored-method-name">watchlist</span>
                 <br/>
-                <span class="ignored-method-name">buyRentVideoTest</span>
+                <span class="ignored-method-name">checkTagname</span>
                 <br/>
-                <span class="ignored-method-name">logoutTest</span>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">playstore</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">couponPercentage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">couponPercentage</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
                 <br/>
                 <span class="ignored-method-name">countTotalVideosWithNames</span>
                 <br/>
-                <span class="ignored-method-name">check_SubscriptionisVisible</span>
-                <br/>
-                <span class="ignored-method-name">updateProfileTest</span>
+                <span class="ignored-method-name">filterValuesTest</span>
                 <br/>
                 <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
                 <br/>
                 <span class="ignored-method-name">filterButtonClickTest</span>
                 <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">watchlist</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">countTotalVideosWithNames</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">detailedPageWithoutLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">viewAllTest</span>
+                <br/>
                 <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">checkrazorpayopen</span>
+                <br/>
+                <span class="ignored-method-name">loginWithPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">logoutTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
+                <br/>
+                <span class="ignored-method-name">Banner_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">checkrazorpayopen</span>
+                <br/>
+                <span class="ignored-method-name">buyRentVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">filterButtonClickTest</span>
+                <br/>
+                <span class="ignored-method-name">filterValuesTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">playVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">checkRelatedvideo</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">couponPercentage</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPopupIsVisibleuserBuysubscription</span>
+                <br/>
+                <span class="ignored-method-name">check_SubscriptionisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">verifyCurrentUrlTest</span>
+                <br/>
+                <span class="ignored-method-name">footerTermsAndConditionsTest</span>
+                <br/>
+                <span class="ignored-method-name">wrongOtpLoginTest</span>
+                <br/>
+                <span class="ignored-method-name">loginWithMailTest</span>
+                <br/>
+                <span class="ignored-method-name">withoutLoginSubscriptionButtonisVisible</span>
+                <br/>
+                <span class="ignored-method-name">checkUserBuySubscription</span>
+                <br/>
+                <span class="ignored-method-name">verifyurl</span>
+                <br/>
+                <span class="ignored-method-name">searchVideoTest</span>
+                <br/>
+                <span class="ignored-method-name">checkTagname</span>
+                <br/>
+                <span class="ignored-method-name">Validate_No_Data_message_is_visible</span>
+                <br/>
+                <span class="ignored-method-name">subscription</span>
+                <br/>
+                <span class="ignored-method-name">updateProfileTest</span>
+                <br/>
+                <span class="ignored-method-name">ApplestoreButtonTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -2413,326 +2462,330 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginWithMailTest</span>
-                <span class="method-start">4887 ms</span>
+                <span class="method-start">35866 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">7875 ms</span>
+                <span class="method-start">39636 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">8449 ms</span>
+                <span class="method-start">40059 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginWithPhoneNumber</span>
-                <span class="method-start">12313 ms</span>
+                <span class="method-start">44719 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">20984 ms</span>
+                <span class="method-start">53905 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">21430 ms</span>
+                <span class="method-start">54375 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyCurrentUrlTest</span>
-                <span class="method-start">25301 ms</span>
+                <span class="method-start">59201 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">25326 ms</span>
+                <span class="method-start">59235 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">25691 ms</span>
+                <span class="method-start">59476 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">updateProfileTest</span>
-                <span class="method-start">28675 ms</span>
+                <span class="method-start">63225 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">42081 ms</span>
+                <span class="method-start">77094 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">42552 ms</span>
+                <span class="method-start">77535 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">searchVideoTest</span>
-                <span class="method-start">46007 ms</span>
+                <span class="method-start">80428 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">65106 ms</span>
+                <span class="method-start">108372 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">65561 ms</span>
+                <span class="method-start">108889 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">wrongOtpLoginTest</span>
-                <span class="method-start">69173 ms</span>
+                <span class="method-start">111772 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">75877 ms</span>
+                <span class="method-start">129292 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">76297 ms</span>
+                <span class="method-start">129530 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">playVideoTest</span>
-                <span class="method-start">79811 ms</span>
+                <span class="method-start">132491 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">92273 ms</span>
+                <span class="method-start">150492 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">92726 ms</span>
+                <span class="method-start">150841 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">footerTermsAndConditionsTest</span>
-                <span class="method-start">96103 ms</span>
+                <span class="method-start">154599 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">102064 ms</span>
+                <span class="method-start">161898 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">102498 ms</span>
+                <span class="method-start">162178 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">logoutTest</span>
-                <span class="method-start">106285 ms</span>
+                <span class="method-start">165827 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">116150 ms</span>
+                <span class="method-start">188001 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">116672 ms</span>
+                <span class="method-start">188306 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">filterValuesTest</span>
-                <span class="method-start">120250 ms</span>
+                <span class="method-start">191682 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">140297 ms</span>
+                <span class="method-start">215049 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">140806 ms</span>
+                <span class="method-start">215380 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">viewAllTest</span>
-                <span class="method-start">144408 ms</span>
+                <span class="method-start">247449 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">159213 ms</span>
+                <span class="method-start">263132 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">159692 ms</span>
+                <span class="method-start">263483 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkRelatedvideo</span>
-                <span class="method-start">163474 ms</span>
+                <span class="method-start">267041 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">197308 ms</span>
+                <span class="method-start">317738 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">197857 ms</span>
+                <span class="method-start">318058 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Banner_is_visible</span>
-                <span class="method-start">201783 ms</span>
+                <span class="method-start">321412 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">220526 ms</span>
+                <span class="method-start">340273 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">220997 ms</span>
+                <span class="method-start">340566 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">subscription</span>
-                <span class="method-start">224556 ms</span>
+                <span class="method-start">343540 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">234721 ms</span>
+                <span class="method-start">354431 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">235228 ms</span>
+                <span class="method-start">354749 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">withoutLoginSubscriptionButtonisVisible</span>
-                <span class="method-start">238739 ms</span>
+                <span class="method-start">357221 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">238786 ms</span>
+                <span class="method-start">357772 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">239122 ms</span>
+                <span class="method-start">357956 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">check_SubscriptionisVisible</span>
-                <span class="method-start">242618 ms</span>
+                <span class="method-start">362715 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">255723 ms</span>
+                <span class="method-start">385868 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">256253 ms</span>
+                <span class="method-start">386169 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkUserBuySubscription</span>
-                <span class="method-start">259406 ms</span>
+                <span class="method-start">389920 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">272474 ms</span>
+                <span class="method-start">413612 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">272962 ms</span>
+                <span class="method-start">413904 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyPopupIsVisibleuserBuysubscription</span>
-                <span class="method-start">276802 ms</span>
+                <span class="method-start">417208 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">294999 ms</span>
+                <span class="method-start">441335 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">295447 ms</span>
+                <span class="method-start">441621 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyurl</span>
-                <span class="method-start">298965 ms</span>
+                <span class="method-start">473017 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">298984 ms</span>
+                <span class="method-start">473041 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">299355 ms</span>
+                <span class="method-start">473271 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkTagname</span>
-                <span class="method-start">302479 ms</span>
+                <span class="method-start">476907 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">302498 ms</span>
+                <span class="method-start">476918 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">302934 ms</span>
+                <span class="method-start">477113 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">countTotalVideosWithNames</span>
-                <span class="method-start">306265 ms</span>
+                <span class="method-start">479572 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">307318 ms</span>
+                <span class="method-start">482919 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">307742 ms</span>
+                <span class="method-start">483126 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">ApplestoreButtonTest</span>
-                <span class="method-start">311311 ms</span>
+                <span class="method-start">486307 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">326340 ms</span>
+                <span class="method-start">502061 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">326990 ms</span>
+                <span class="method-start">502435 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">playstore</span>
-                <span class="method-start">330479 ms</span>
+                <span class="method-start">505775 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">345875 ms</span>
+                <span class="method-start">520884 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Chull.Testcase2</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">346398 ms</span>
+                <span class="method-start">521163 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkcouponprice</span>
-                <span class="method-start">350545 ms</span>
+                <span class="method-start">524168 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">368216 ms</span>
+                <span class="method-start">542959 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">368706 ms</span>
+                <span class="method-start">543232 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">couponPercentage</span>
-                <span class="method-start">371999 ms</span>
+                <span class="method-start">546315 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">389684 ms</span>
+                <span class="method-start">565435 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">390278 ms</span>
+                <span class="method-start">565736 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkrazorpayopen</span>
-                <span class="method-start">394049 ms</span>
+                <span class="method-start">569208 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">432791 ms</span>
+                <span class="method-start">591368 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">433313 ms</span>
+                <span class="method-start">591681 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Validate_No_Data_message_is_visible</span>
-                <span class="method-start">436641 ms</span>
+                <span class="method-start">594536 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">455777 ms</span>
+                <span class="method-start">614399 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
