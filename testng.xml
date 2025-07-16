@@ -235,7 +235,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test><test name="verify that the coupon with the percentage ">
+	</test>
+	<test name="verify that the coupon with the percentage ">
 		<classes>
 			<class name="Chull.Testcase2">
 				<methods>
@@ -258,6 +259,34 @@
 			<class name="Chull.Testcase2">
 				<methods>
 					<include name="Validate_No_Data_message_is_visible" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test
+		name="verify that without login if user click on the watchnow so redirect into login">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="clickwatchnow_userredirect_into_login" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Validate No of banner is visible in the Subscription page">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="insidecouponpagebannerisvisible" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Check No of banner is visible in the Homepage">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="checkNoofBannerpresendInHomepage" />
 				</methods>
 			</class>
 		</classes>

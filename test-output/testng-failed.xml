@@ -5,7 +5,7 @@
     <classes>
       <class name="Chull.Testcase2">
         <methods>
-          <include name="checkrazorpayopen"/>
+          <include name="clickwatchnow_userredirect_into_login"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>

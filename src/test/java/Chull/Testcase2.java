@@ -1,5 +1,7 @@
 package Chull;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -201,9 +203,83 @@ public class Testcase2 extends TestCase {
 		searchBox.sendKeys("Hey only put for testing purpose", Keys.ENTER);
 		Thread.sleep(3000);
 
-		
-		String message = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h2[normalize-space()='No data available']"))).getText();
+		String message = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h2[normalize-space()='No data available']")))
+				.getText();
 		System.out.println(message);
 	}
 
+	@Test
+	public void clickwatchnow_userredirect_into_login() throws InterruptedException {
+		Thread.sleep(4000);
+
+		WebElement clickonvideo = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class=\"img-top\"])[1]")));
+		clickonvideo.click();
+
+		driver.findElement(By.xpath("//button[@class=\"sc-fUnMCh hzdSCt\"]")).click();
+		boolean check = driver.findElement(By.xpath("//div[@class=\"signin-form\"]")).isDisplayed();
+		System.out.println(check);
+	}
+
+	@Test
+	public void insidecouponpagebannerisvisible() {
+
+		try {
+			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath("//button[normalize-space(.)=\"Login with Email\"]")).click();
+
+			driver.findElement(By.xpath("//input[@placeholder='Enter Email']")).sendKeys("rajnish.kumar@unvii.com");
+			driver.findElement(By.xpath("//button[normalize-space()='Send OTP']")).click();
+			driver.findElement(By.xpath("//input[@class='otp-input form-control']")).sendKeys("1234");
+			driver.findElement(By.xpath("//button[normalize-space()='Verify OTP']")).click();
+
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class='Movieslogo'])[5]"))).click();
+			Thread.sleep(4000);
+
+			WebElement clickonchooseplan = wait.until(ExpectedConditions.elementToBeClickable(
+					(By.xpath("(//button[@class=\"subscription_button btn btn-lg btn-block planBtn\"])[1]"))));
+			clickonchooseplan.click();
+
+			Thread.sleep(4000);
+			List<WebElement> banners = driver.findElements(By.xpath("//img[@class='d-block w-100 mscreen']"));
+			int totalBanners = banners.size();
+
+			System.out.println("Total number of banners: " + totalBanners);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	@Test
+	public void checkNoofBannerpresendInHomepage() throws InterruptedException {
+		try {
+			Thread.sleep(4000);
+
+			List<WebElement> banners = driver.findElements(By.xpath("//img[@class='d-block w-100 mscreen']"));
+			int totalBanners = banners.size();
+			System.out.println(totalBanners);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void checkAlllanguageIsvisible() {
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class=\"Movieslogo\"])[4]"))).click();
+	    List<WebElement> listOfLanguages = driver.findElements(By.xpath("//div[@class='card']"));
+	    
+	    System.out.println("Total languages found: " + listOfLanguages.size());
+
+	    for (int i = 0; i < listOfLanguages.size(); i++) {
+	        WebElement languageCard = listOfLanguages.get(i);
+	        String languageName = languageCard.getText(); // or use .findElement(...) if text is inside a child
+	        System.out.println("Language " + (i + 1) + ": " + languageName);
+	    }
+	}
 }
