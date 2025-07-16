@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="31" total="32" passed="1" failed="0" skipped="0">
+<testng-results ignored="34" total="35" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-10T14:49:07 IST" name="Default suite" finished-at="2025-07-10T14:49:50 IST" duration-ms="42655">
+  <suite started-at="2025-07-16T16:48:00 IST" name="Default suite" finished-at="2025-07-16T16:48:35 IST" duration-ms="35145">
     <groups>
     </groups>
-    <test started-at="2025-07-10T14:49:07 IST" name="Default test" finished-at="2025-07-10T14:49:50 IST" duration-ms="42655">
+    <test started-at="2025-07-16T16:48:00 IST" name="Default test" finished-at="2025-07-16T16:48:35 IST" duration-ms="35145">
       <class name="Chull.Testcase2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.Testcase2@6340e5f0]" started-at="2025-07-10T14:49:07 IST" name="setup" finished-at="2025-07-10T14:49:41 IST" duration-ms="34398" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:00 IST" name="setup" finished-at="2025-07-16T16:48:34 IST" duration-ms="33499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="clickwatchnow_userredirect_into_login()[pri:0, instance:Chull.Testcase2@6340e5f0]" started-at="2025-07-10T14:49:41 IST" name="clickwatchnow_userredirect_into_login" finished-at="2025-07-10T14:49:49 IST" duration-ms="7361" status="PASS">
+        <test-method signature="checkAlllanguageIsvisible()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:34 IST" name="checkAlllanguageIsvisible" finished-at="2025-07-16T16:48:35 IST" duration-ms="1144" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickwatchnow_userredirect_into_login -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.Testcase2@6340e5f0]" started-at="2025-07-10T14:49:49 IST" name="teardown" finished-at="2025-07-10T14:49:50 IST" duration-ms="796" status="PASS">
+        </test-method> <!-- checkAlllanguageIsvisible -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:35 IST" name="teardown" finished-at="2025-07-16T16:48:35 IST" duration-ms="460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
