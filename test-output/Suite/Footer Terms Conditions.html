@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 04 16:41:21 IST 2025</td>
+<td>Started on:</td><td>Fri Jul 11 08:33:23 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2731 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14034 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Chull.TestCase.footerTermsAndConditionsTest()'><b>footerTermsAndConditionsTest</b><br>Test class: Chull.TestCase</td>
-<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=138.0.7204.96)
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (471, 1662)
+  (Session info: chrome=138.0.7204.97)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1afb151050177d05bd8894c69fd30c36, findElement {using=xpath, value=//a[@href=&apos;/login&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.96, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\Yash\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56648}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56648/devtoo..., se:cdpVersion: 138.0.7204.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1afb151050177d05bd8894c69fd30c36
+Command: [bf81a2f4276b5bee94386113bf5f194a, clickElement {id=f.DF9C324E5F2E34A0589638365D1458DA.d.21C188F68078DC2BAE12BBFC582EA7F0.e.80}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\Yash\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60478}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60478/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bf81a2f4276b5bee94386113bf5f194a)] -&gt; xpath: //span[normalize-space()=&apos;Terms and Conditions&apos;]]
+Session ID: bf81a2f4276b5bee94386113bf5f194a
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -92,24 +92,22 @@ Session ID: 1afb151050177d05bd8894c69fd30c36
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at Chull.TestCase.footerTermsAndConditionsTest(TestCase.java:287)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Chull.TestCase.footerTermsAndConditionsTest(TestCase.java:309)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1570)
-... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1923962294", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1923962294'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=138.0.7204.96)
+... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1261128344", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1261128344'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (471, 1662)
+  (Session info: chrome=138.0.7204.97)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1afb151050177d05bd8894c69fd30c36, findElement {using=xpath, value=//a[@href=&apos;/login&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.96, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\Yash\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56648}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56648/devtoo..., se:cdpVersion: 138.0.7204.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1afb151050177d05bd8894c69fd30c36
+Command: [bf81a2f4276b5bee94386113bf5f194a, clickElement {id=f.DF9C324E5F2E34A0589638365D1458DA.d.21C188F68078DC2BAE12BBFC582EA7F0.e.80}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\Yash\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60478}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60478/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bf81a2f4276b5bee94386113bf5f194a)] -&gt; xpath: //span[normalize-space()=&apos;Terms and Conditions&apos;]]
+Session ID: bf81a2f4276b5bee94386113bf5f194a
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -120,11 +118,9 @@ Session ID: 1afb151050177d05bd8894c69fd30c36
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at Chull.TestCase.footerTermsAndConditionsTest(TestCase.java:287)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Chull.TestCase.footerTermsAndConditionsTest(TestCase.java:309)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -139,7 +135,7 @@ Session ID: 1afb151050177d05bd8894c69fd30c36
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1570)
 </pre></div></td>
-<td>0</td>
+<td>7</td>
 <td>Chull.TestCase@268f106e</td></tr>
 </table><p>
 </body>

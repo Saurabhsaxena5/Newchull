@@ -1,4 +1,4 @@
-package Chull;
+package TestCases;
 
 import java.time.Duration;
 import java.util.List;
@@ -28,7 +28,7 @@ public class TestCase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.get("https://chull.tv/");
+		driver.get("https://4sidesplay.com/");
 
 	}
 
@@ -923,7 +923,7 @@ public class TestCase {
 	public void checkTagname() {
 
 		String actual = driver.getTitle();
-		String expected = "Chull Tv - OTT Platform for Web Series Movies Entertainment Show";
+		String expected = "TestCases Tv - OTT Platform for Web Series Movies Entertainment Show";
 
 		if (actual.equals(expected)) {
 			System.out.println("verify the url");
