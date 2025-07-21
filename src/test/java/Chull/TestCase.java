@@ -281,86 +281,85 @@ public class TestCase {
 	// Test Case 9: Click footer links
 	@Test
 	public void footerTermsAndConditionsTest() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		// Login Flow
-		driver.findElement(By.xpath("//a[@href='/login']")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile Number']")))
-				.sendKeys("8920689888");
+	    // Login Flow
+	    driver.findElement(By.xpath("//a[@href='/login']")).click();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile Number']")))
+	            .sendKeys("8920689888");
 
-		driver.findElement(By.xpath("//button[normalize-space()='Send OTP']")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='otp']"))).sendKeys("1234");
+	    driver.findElement(By.xpath("//button[normalize-space()='Send OTP']")).click();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='otp']"))).sendKeys("1234");
 
-		WebElement clickOnSendOtp = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Verify OTP']")));
-		clickOnSendOtp.click();
+	    WebElement clickOnSendOtp = wait
+	            .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Verify OTP']")));
+	    clickOnSendOtp.click();
 
-		// Wait until page is loaded
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("footer")));
+	    // Wait until footer is present
+	    wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("footer")));
 
-		// Scroll to bottom
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	    // Scroll to footer
+	    js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 
-		// Wait for terms link to be visible and clickable
-		WebElement termsLink = wait.until(
-				ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Terms and Conditions']")));
-		js.executeScript("arguments[0].scrollIntoView(true);", termsLink);
-		termsLink.click();
+	    // Wait for "Terms and Conditions" link to be clickable
+	    WebElement termsLink = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(By.xpath("//span[normalize-space()='Terms and Conditions']")));
 
-		// Wait a bit to ensure iframe or new tab is loaded
-		Thread.sleep(2000); // Optional: use explicit wait if there's a proper condition
+	    // Scroll to the link and force click using JavaScript
+	    js.executeScript("arguments[0].scrollIntoView({block: 'center'});", termsLink);
+	    Thread.sleep(500); // optional short pause to ensure scroll completes
+	    js.executeScript("arguments[0].click();", termsLink);
 
-		// ==== DEBUGGING: Print all iframe IDs ====
-		List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-		System.out.println("Total iframes: " + iframes.size());
-		for (WebElement iframe : iframes) {
-			System.out.println("iframe ID: " + iframe.getAttribute("id"));
-			System.out.println("iframe SRC: " + iframe.getAttribute("src"));
-		}
+	    // Wait a bit to ensure iframe or new tab is loaded
+	    Thread.sleep(2000); // Optional: use explicit wait if a proper condition is available
 
-		// Try switching to first available iframe as fallback
-		if (!iframes.isEmpty()) {
-			driver.switchTo().frame(iframes.get(0)); // You can refine this by matching ID/src if needed
+	    // DEBUG: Print all iframe details
+	    List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+	    System.out.println("Total iframes: " + iframes.size());
+	    for (WebElement iframe : iframes) {
+	        System.out.println("iframe ID: " + iframe.getAttribute("id"));
+	        System.out.println("iframe SRC: " + iframe.getAttribute("src"));
+	    }
 
-			// Now interact inside the frame
-			WebElement termsHeader = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='container']")));
-			if (termsHeader.isDisplayed()) {
-				System.out.println("Element is visible");
-			} else {
-				System.out.println("Data Not Displayed");
-			}
+	    if (!iframes.isEmpty()) {
+	        // Try switching to the first available iframe
+	        driver.switchTo().frame(iframes.get(0));
 
-			// Switch back to default content after checking
-			driver.switchTo().defaultContent();
-		} else {
-			System.out.println("❌ No iframe found. Terms and Conditions might be in a new tab.");
+	        WebElement termsHeader = wait
+	                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='container']")));
+	        if (termsHeader.isDisplayed()) {
+	            System.out.println("✅ Element is visible inside iframe.");
+	        } else {
+	            System.out.println("❌ Data not displayed inside iframe.");
+	        }
 
-			// Optional: handle new window/tab
-			String originalWindow = driver.getWindowHandle();
-			Set<String> allWindows = driver.getWindowHandles();
-			for (String window : allWindows) {
-				if (!window.equals(originalWindow)) {
-					driver.switchTo().window(window);
-					break;
-				}
-			}
+	        driver.switchTo().defaultContent();
+	    } else {
+	        System.out.println("❌ No iframe found. Trying to handle new tab...");
 
-			// Now try to find the element in new tab
-			WebElement termsHeader = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='container']")));
-			if (termsHeader.isDisplayed()) {
-				System.out.println("✅ Element visible in new tab.");
-			} else {
-				System.out.println("❌ Data Not Displayed in new tab.");
-			}
+	        String originalWindow = driver.getWindowHandle();
+	        Set<String> allWindows = driver.getWindowHandles();
+	        for (String window : allWindows) {
+	            if (!window.equals(originalWindow)) {
+	                driver.switchTo().window(window);
+	                break;
+	            }
+	        }
 
-			// Optional: close the new tab and return to original
-			driver.close();
-			driver.switchTo().window(originalWindow);
-		}
+	        WebElement termsHeader = wait
+	                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='container']")));
+	        if (termsHeader.isDisplayed()) {
+	            System.out.println("✅ Element visible in new tab.");
+	        } else {
+	            System.out.println("❌ Data Not Displayed in new tab.");
+	        }
+
+	        driver.close();
+	        driver.switchTo().window(originalWindow);
+	    }
 	}
+
 
 	// Test Case 10: Without login detailed page navigation
 	@Test

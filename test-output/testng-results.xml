@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="34" total="35" passed="1" failed="0" skipped="0">
+<testng-results ignored="35" total="36" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-16T16:48:00 IST" name="Default suite" finished-at="2025-07-16T16:48:35 IST" duration-ms="35145">
+  <suite started-at="2025-07-21T16:34:04 IST" name="Default suite" finished-at="2025-07-21T16:34:52 IST" duration-ms="47699">
     <groups>
     </groups>
-    <test started-at="2025-07-16T16:48:00 IST" name="Default test" finished-at="2025-07-16T16:48:35 IST" duration-ms="35145">
+    <test started-at="2025-07-21T16:34:04 IST" name="Default test" finished-at="2025-07-21T16:34:52 IST" duration-ms="47699">
       <class name="Chull.Testcase2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:00 IST" name="setup" finished-at="2025-07-16T16:48:34 IST" duration-ms="33499" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Chull.Testcase2@6574a52c]" started-at="2025-07-21T16:34:04 IST" name="setup" finished-at="2025-07-21T16:34:10 IST" duration-ms="6003" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkAlllanguageIsvisible()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:34 IST" name="checkAlllanguageIsvisible" finished-at="2025-07-16T16:48:35 IST" duration-ms="1144" status="PASS">
+        <test-method signature="clickcancelButtonOnrazorpay()[pri:0, instance:Chull.Testcase2@6574a52c]" started-at="2025-07-21T16:34:10 IST" name="clickcancelButtonOnrazorpay" finished-at="2025-07-21T16:34:51 IST" duration-ms="40712" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkAlllanguageIsvisible -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.Testcase2@1ffaf86]" started-at="2025-07-16T16:48:35 IST" name="teardown" finished-at="2025-07-16T16:48:35 IST" duration-ms="460" status="PASS">
+        </test-method> <!-- clickcancelButtonOnrazorpay -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Chull.Testcase2@6574a52c]" started-at="2025-07-21T16:34:51 IST" name="teardown" finished-at="2025-07-21T16:34:52 IST" duration-ms="896" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
