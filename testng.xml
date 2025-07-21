@@ -291,5 +291,24 @@
 			</class>
 		</classes>
 	</test>
+	<test name="Check All the Language is visible properly">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="checkAlllanguageIsvisible" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify if user click a backbutton inside the razorpay">
+		<classes>
+			<class name="Chull.Testcase2">
+				<methods>
+					<include name="checkAlllanguageIsvisible" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
 
 </suite>
