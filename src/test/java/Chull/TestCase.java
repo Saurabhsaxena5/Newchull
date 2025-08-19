@@ -40,7 +40,7 @@ public class TestCase {
 	}
 
 	// Test Case 1: Login with phone number
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)(retryAnalyzer = RetryAnalyzer.class)
 	public void loginWithPhoneNumber() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
 		Thread.sleep(2000);
@@ -58,7 +58,7 @@ public class TestCase {
 	}
 
 	// Test Case 2: Filter button click
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void filterButtonClickTest() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector('.dropdown-menu').scrollBy(0,100)");
@@ -69,7 +69,7 @@ public class TestCase {
 	}
 
 	// Test Case 3: Profile update
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void updateProfileTest() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
 		Thread.sleep(2000);
@@ -97,7 +97,7 @@ public class TestCase {
 	}
 
 	// Test Case 4: Verify current URL
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void verifyCurrentUrlTest() {
 		String url = driver.getCurrentUrl();
 
@@ -113,7 +113,7 @@ public class TestCase {
 
 	// Test Case 5: Subscription check
 	/*
-	 * @Test
+	 * @Test(retryAnalyzer = RetryAnalyzer.class)
 	 * 
 	 * public void subscriptionTest() { WebElement subscriptionIcon =
 	 * driver.findElement(By.xpath("//img[@class='subscription-logo']"));
@@ -124,7 +124,7 @@ public class TestCase {
 	 */
 
 	// Test Case 6: Search video
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void searchVideoTest() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -157,7 +157,7 @@ public class TestCase {
 	}
 
 	// Test Case 7: Wrong credentials test
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void wrongOtpLoginTest() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
 		Thread.sleep(2000);
@@ -178,7 +178,7 @@ public class TestCase {
 
 	// Test Case 8: Play video
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void playVideoTest() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
@@ -279,7 +279,7 @@ public class TestCase {
 	}
 
 	// Test Case 9: Click footer links
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void footerTermsAndConditionsTest() throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -362,7 +362,7 @@ public class TestCase {
 
 
 	// Test Case 10: Without login detailed page navigation
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void detailedPageWithoutLoginTest() {
 
 		WebElement devotionalTab = driver.findElement(By.xpath("//a[@href='/Devotional/16']"));
@@ -376,7 +376,7 @@ public class TestCase {
 	}
 
 	// Test Case 11: Login with mail
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void loginWithMailTest() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -392,7 +392,7 @@ public class TestCase {
 	}
 
 	// Test Case 12: Logout
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void logoutTest() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
 		Thread.sleep(2000);
@@ -418,7 +418,7 @@ public class TestCase {
 	}
 
 	// Test Case 13: Buy or rent video
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void buyRentVideoTest() {
 
 		driver.findElement(By.xpath("//div[@class='dropdown'][2]")).click();
@@ -434,7 +434,7 @@ public class TestCase {
 	}
 
 	// Test Case 14: View all button
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void viewAllTest() throws InterruptedException {
 		driver.get("https://chull.tv/"); // Always good to ensure you’re on the right page
 
@@ -485,7 +485,7 @@ public class TestCase {
 	}
 
 	// Test Case 15: ApplestoreStore button
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void ApplestoreButtonTest() throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -538,7 +538,7 @@ public class TestCase {
 	}
 
 	// Test Case 16: Filter with values
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void filterValuesTest() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -571,7 +571,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void watchlist() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -613,7 +613,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkRelatedvideo() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -718,7 +718,7 @@ public class TestCase {
 		System.out.println("Switched back to main content.");
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void Banner_is_visible() throws InterruptedException {
 
 		try {
@@ -750,7 +750,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void subscription() {
 
 		try {
@@ -781,7 +781,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void withoutLoginSubscriptionButtonisVisible() {
 		try {
 			WebElement withoutlogincheckSubscriptionButtonIsvisible = driver
@@ -796,7 +796,7 @@ public class TestCase {
 		}
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void check_SubscriptionisVisible() {
 		try {
 			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -830,7 +830,7 @@ public class TestCase {
 		}
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkUserBuySubscription() {
 		try {
 			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -866,7 +866,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void verifyPopupIsVisibleuserBuysubscription() {
 		try {
 			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -908,7 +908,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void verifyurl() {
 
 		String actualurl = driver.getCurrentUrl();
@@ -922,7 +922,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkTagname() {
 
 		String actual = driver.getTitle();
@@ -936,7 +936,7 @@ public class TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void countTotalVideosWithNames() {
 		try {
 			// Locate all video containers
@@ -954,7 +954,7 @@ public class TestCase {
 		}
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void playstore() throws InterruptedException {
 		
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));

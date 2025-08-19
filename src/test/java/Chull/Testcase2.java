@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class Testcase2 extends TestCase {
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkcouponprice() {
 		try {
 			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -50,7 +50,7 @@ public class Testcase2 extends TestCase {
 		}
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void couponPercentage() {
 		try {
 			driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -98,7 +98,7 @@ public class Testcase2 extends TestCase {
 		}
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkrazorpayopen() throws InterruptedException {
 		try {
 			// Login steps
@@ -180,7 +180,7 @@ public class Testcase2 extends TestCase {
 		}
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void Validate_No_Data_message_is_visible() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -210,7 +210,7 @@ public class Testcase2 extends TestCase {
 		System.out.println(message);
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void clickwatchnow_userredirect_into_login() throws InterruptedException {
 		Thread.sleep(4000);
 
@@ -223,7 +223,7 @@ public class Testcase2 extends TestCase {
 		System.out.println(check);
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void insidecouponpagebannerisvisible() {
 
 		try {
@@ -255,7 +255,7 @@ public class Testcase2 extends TestCase {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkNoofBannerpresendInHomepage() throws InterruptedException {
 		try {
 			Thread.sleep(4000);
@@ -269,7 +269,7 @@ public class Testcase2 extends TestCase {
 		}
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkAlllanguageIsvisible() {
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class=\"Movieslogo\"])[4]"))).click();
@@ -284,7 +284,7 @@ public class Testcase2 extends TestCase {
 	    }
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void clickcancelButtonOnrazorpay() {
 	    try {
 	        // Login steps

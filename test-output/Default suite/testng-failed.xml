@@ -5,13 +5,9 @@
     <classes>
       <class name="Chull.TestCase">
         <methods>
-          <include name="filterButtonClickTest"/>
           <include name="detailedPageWithoutLoginTest"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="footerTermsAndConditionsTest"/>
-          <include name="buyRentVideoTest"/>
-          <include name="watchlist"/>
         </methods>
       </class> <!-- Chull.TestCase -->
     </classes>
